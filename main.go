@@ -5,6 +5,7 @@ import (
 	_ "init_project/test_closure"
 	_ "init_project/test_for"
 	_ "init_project/test_if_switch"
+	"init_project/test_interface"
 	_ "init_project/test_map"
 	_ "init_project/test_range"
 	_ "init_project/test_type_convert"
@@ -26,4 +27,5 @@ func main() {
 	//test_map.Run()
 	//test_range.Run()
 	//test_type_convert.Run()
+	test_interface.Run()
 }
