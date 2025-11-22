@@ -5,7 +5,11 @@ import (
 	_ "init_project/test_closure"
 	_ "init_project/test_for"
 	_ "init_project/test_if_switch"
-	_ "init_project/test_init_order"
+	_ "init_project/test_map"
+	_ "init_project/test_range"
+	_ "init_project/test_type_convert"
+
+	//_ "init_project/test_init_order"
 	_ "init_project/test_pointer"
 	_ "init_project/test_struct"
 	_ "init_project/test_type"
@@ -19,4 +23,7 @@ func main() {
 	//test_for.Run()
 	//test_closure.Run()
 	//test_array_slice.Run()
+	//test_map.Run()
+	//test_range.Run()
+	//test_type_convert.Run()
 }
