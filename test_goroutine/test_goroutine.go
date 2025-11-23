@@ -49,7 +49,7 @@ type SafeCounter struct {
 
 func (c *SafeCounter) Increment() {
 	c.mu.Lock()
-	defer c.mu.Unlock() // 避免因代码修改或异常导致的锁未释放问题。 如果在
+	defer c.mu.Unlock() // 避免因代码修改或异常导致的锁未释放问题。 defer与finally相似,但defer是一个堆栈操作，在函数返回时执行,
 	c.count += 1
 }
 

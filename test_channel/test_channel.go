@@ -15,16 +15,17 @@ func recieve(ch <-chan int) { // <-chan 限定了channel只能作recieve模式�
 
 func send(ch chan<- int) { // chan<- 限定了channel只能作send模式，send to(->) channel也就是send数据到channel ch<-{data}
 	for i := 0; i < 5; i++ {
+		fmt.Println("send before:", i)
 		ch <- i
-		fmt.Println("send:", i)
+		fmt.Println("send after:", i)
 	}
 	close(ch)
 }
 
 func test_init_channel() {
 	//var ch channel int -> 仅是声明，值为nil
-	//ch := make(chan int, 3) // 创建一个有3个缓冲空间的channel
-	ch := make(chan int) // 创建一个无缓冲的channel
+	ch := make(chan int, 3) // 创建一个有3个缓冲空间的channel,当空间满了之后,新数据的写入会进入阻塞等待
+	//ch := make(chan int) // 创建一个无缓冲的channel,相当于长度容量为1,
 	go send(ch)
 	go recieve(ch)
 
@@ -43,11 +44,12 @@ func test_init_channel() {
 			return
 		default:
 			fmt.Println("等待数据")
+			time.Sleep(500 * time.Millisecond)
 		}
 	}
 }
 
 func Run() {
-	fmt.Print("test_channel")
+	fmt.Println("test_channel")
 	test_init_channel()
 }
