@@ -2,11 +2,13 @@ package main
 
 import (
 	_ "init_project/test_array_slice"
-	"init_project/test_channel"
+	_ "init_project/test_channel"
 	_ "init_project/test_closure"
 	_ "init_project/test_for"
 	_ "init_project/test_goroutine"
 	_ "init_project/test_if_switch"
+	//"init_project/test_select"
+	"init_project/test_select"
 
 	_ "init_project/test_interface"
 	_ "init_project/test_map"
@@ -33,5 +35,6 @@ func main() {
 	//test_interface.Run()
 	//test_init_order.Run()
 	//test_goroutine.Run()
-	test_channel.Run()
+	//test_channel.Run()
+	test_select.Run()
 }
